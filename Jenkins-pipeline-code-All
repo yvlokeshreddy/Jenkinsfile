@@ -1,1 +1,9 @@
-
+node{
+   stage{'SCM Checkout'){
+   git 'https://github.com/yvlokeshreddy/Jenkinsfile'
+}
+   stage('Compile_package'){
+   def mvnHome = tool name: '', type: 'maven'
+   sh "${mvnHome}/bin/mvn package"
+  }
+}
